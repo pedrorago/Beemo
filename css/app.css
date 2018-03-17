@@ -56,7 +56,7 @@ button
     position: absolute;
     width: 9em;
     height: 6em;
-    bottom: 13%;
+    bottom: 11%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,17 +68,19 @@ button
     width: 86%;
     height: 6em;
     background: #b9dfca;
-    border-radius: 56%;
     position: absolute;
-    top: -30%;
+    /*top: -61%;*/
+    top:-51%;
+    transition: .5s ease-out;
 }
 .BeemoLabioInferior
 {
     width: 80%;
     height: 5em;
-    background: #000;
+    background: transparent;
     border-radius: 55%;
-    margin-bottom: 2em;
+    margin-bottom: 5em;
+    border-bottom: 3px solid;
 }
 .BeemoDiscoContainer
 {
