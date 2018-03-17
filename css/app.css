@@ -1,0 +1,246 @@
+body
+{
+	overflow-x: hidden;
+}
+button:focus
+{
+    outline: none;
+}
+button
+{
+    cursor: pointer;
+}
+.content
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #e6e6e6;
+	position: fixed;
+}
+.BeemoBody
+{
+	width: 400px;
+	height: 650px;
+	background: #25ad9f;
+	border: 1.5px solid #000;
+	display: flex;
+	flex-direction: column;
+}
+.BeemoFace
+{
+    background-color: #b9dfca;
+    width: 10em;
+    height: 14em;
+    align-self: center;
+    margin-top: 3em;
+    border-radius: 34px;
+    border: 4px solid #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 5em;
+    position: relative;
+}
+.BeemoOlhos
+{
+    width: 1em;
+    height: 1em;
+    background-color: #000;
+    border-radius: 100%;
+    margin-top: 5em;
+}
+.BeemoBoca
+{
+    position: absolute;
+    width: 9em;
+    height: 6em;
+    bottom: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    left: 27.5%;
+}
+.BeemoLabioSuperior
+{
+    width: 86%;
+    height: 6em;
+    background: #b9dfca;
+    border-radius: 56%;
+    position: absolute;
+    top: -30%;
+}
+.BeemoLabioInferior
+{
+    width: 80%;
+    height: 5em;
+    background: #000;
+    border-radius: 55%;
+    margin-bottom: 2em;
+}
+.BeemoDiscoContainer
+{
+    margin-top: 2.2em;
+    width: 100%;
+    display: flex;
+    height: auto;
+    align-items: center;
+}
+.BeemoDisco
+{
+    height: 1.2em;
+    width: 49%;
+    background-color: #005037;
+    margin-left: 3em;
+    border: 2px solid #000;
+}
+.BeemoBotaoDisco
+{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background-color: #00477d;
+    margin-left: 5em;
+    transition: .3s ease-out;
+}
+.BeemoSetas
+{
+    width: 6.3em;
+    height: 6.3em;
+    margin-left: 3em;
+    margin-top: 4em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.setas
+{
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    background-color: #fdd050;
+    cursor: pointer;
+}
+.setaCima
+{
+    top: 0%;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.setaBaixo
+{
+    bottom: .5%;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.setaEsquerda
+{
+    left: 0%;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+}
+.setaDireita
+{
+    right: .5%;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.setaCentro
+{
+    width: 2em;
+    height: 2em;
+    background-color: #fdd050;
+}
+.BeemoPlugs
+{
+    display: flex;
+    justify-content: space-between;
+    width: 7em;
+    margin-top: 3.5em;
+    margin-left: 3em;
+}
+.BeemoPlug
+{
+    width: 2.5em;
+    height: .5em;
+    background-color: #00477b;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+.BeemoBotoes
+{
+    width: 10em;
+    height: 13em;
+    align-self: flex-end;
+    margin-top: -11em;
+    margin-right: 3em;
+    position: relative;
+}
+.botaoVermelho
+{
+    width: 5.5em;
+    height: 5.5em;
+    background-color: #ec3b45;
+    border-radius: 50%;
+    border: 3px solid #000;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+
+}
+.botaoVerde
+{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background-color: #6ebb64;
+    position: absolute;
+    right: -10%;
+    top: 41%;
+}
+.botaoAzul {
+    border: 3px solid #000;
+    border-top: 0px transparent solid;
+    border-right: 31px transparent solid;
+    border-left: 31px transparent solid;
+    border-bottom: 65px #44c2df solid;
+    width: 0px;
+    height: 0px;
+    margin-top: 2.5em;
+    margin-left: 3em;
+    cursor: pointer;
+}
+.bordaBotaoTriangulo
+{
+    width: 3px;
+    height: 4em;
+    background-color: #000;
+    position: absolute;
+}
+.bordaEsquerda
+{
+    top: 20%;
+    left: 39%;
+    transform: skewX(-26deg);
+}
+.bordaDireita
+{
+    top: 20%;
+    left: 58%;
+    transform: skewX(26deg);
+}
+.bordaBaixo
+{
+    width: 4.07em;
+    height: 3px;
+    left: 29.06%;
+}
