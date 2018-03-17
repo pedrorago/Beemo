@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Arcade';
+  src: url('fonte/Arcade.eot');
+  src: url('fonte/arcade?#iefix') format('embedded-opentype'),
+  url('fonte/arcade.svg#Locaweb-Icons') format('svg'),
+  url('fonte/arcade.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body
 {
 	overflow-x: hidden;
@@ -24,10 +34,15 @@ button
 {
 	width: 400px;
 	height: 650px;
-	background: #25ad9f;
-	border: 1.5px solid #000;
-	display: flex;
-	flex-direction: column;
+}
+.BeemoFrente
+{
+    background: #25ad9f;
+    border: 1.5px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 .BeemoFace
 {
@@ -36,12 +51,17 @@ button
     height: 14em;
     align-self: center;
     margin-top: 3em;
-    border-radius: 34px;
+    border-radius: 41px;
     border: 4px solid #000;
     display: flex;
     justify-content: space-between;
     padding: 0em 5em;
     position: relative;
+    transition: .3s ease-out;
+}
+.BeemoFaceDigitando
+{
+    background-color: #1d3934;
 }
 .BeemoOlhos
 {
@@ -245,4 +265,20 @@ button
     width: 4.07em;
     height: 3px;
     left: 29.06%;
+}
+.texto
+{
+    font-family: 'Arcade';
+    color: #17f588;
+    position: absolute;
+    width: 86%;
+    height: 78%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 41px;
+    left: 0%;
+    padding: 1.5em;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
