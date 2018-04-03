@@ -6,8 +6,6 @@ $(function(){
 
 	paraBotao();
 
-	enviaMensagem();
-
 });
 
 
@@ -32,22 +30,31 @@ function saudacao()
 
 	var textoSaudacao = 'Ola amiguinho!';
 
-	setTimeout(digitacao(textoSaudacao), 3000);
+	var h1 = $('<h1 class="mensagemDoBeemo">');
+
+	setTimeout(digitacao(textoSaudacao, h1), 3000);
+
+	$(".mensagemDoBeemo").css('padding-left', '3.3em');
+
 
 	setTimeout(function()
 	{
-		$('.botaoAbreForm').fadeIn();
-		$(".botaoAbreForm").css('animation', 'quicaBotao 1.2s ease-out 3');
+		$('.buttonChat').fadeIn();
+		$(".buttonChat").css('animation', 'quicaBotao 1s ease-out 3');
 	}, 2000);
 
 }
 
-function digitacao(mensagem)
+function digitacao(mensagem, paragrafo)
 {
 	n = 0; // número incrementado
 	t = ""; // letra incrementada
 	v = 100; // velocidade do texto
+	var campo = $(".texto");
 	var texto = mensagem;
+	var p = paragrafo;
+	campo.append(p);
+
 	function alerta() {
 		t+=texto.charAt(n);
 		if(n > texto.length) {
@@ -56,7 +63,9 @@ function digitacao(mensagem)
 		setTimeout(function() {
 			alerta();
 		}, v);
-		$('.texto').html(t);
+
+		p.text(t);
+
 		n++;
 	}
 
@@ -67,32 +76,60 @@ function digitacao(mensagem)
 
 function paraBotao()
 {
-	$('.botaoAbreForm').on('click', function()
+	$('.buttonChat').one('mouseenter', function()
 	{	
-		$(this).css('bottom', '3.5%');
+		$(this).css('bottom', '6.7%');
 		$(this).css('animation', 'none');
-		abreChat();
 	});
 }
 
-function abreChat()
-{
-	setTimeout(function()
-	{
-		$(".faleForm").toggle();
+function enviaMensagem()
+{	
+	$(".texto").removeClass('textoAlinhado');
+	$(".texto").find('h1').css('padding-left', '1.5em');
 
-	}, 200);
+	var p = $("<p class='mensagemEnviada' id='mensagemEnviada'>");
+
+	var mensagem = $(".InputTexto").val();
+	
+
+	digitacao(mensagem,p);
+
+	verificaMensagem(mensagem);
+
+	verificaTela();
+
 }
 
-function enviaMensagem()
+function verificaTela()
 {
-	var mensagem = $(".faleForm").find('input').val();
-	var btnEnviar = $(".faleForm").find('span');
-	var corpoDoTexto = $(".texto");
+	var quantidade = document.getElementById("texto").children.length;
 
-	btnEnviar.on('click', function()
+	if(quantidade > 1)
 	{
-		var mensagemAEnviar = innerHTML('<p>'+mensagem+'</p>');
-		corpoDoTexto.append(mensagemAEnviar);
+		abaixaTela()    
+	}
+
+}
+function abaixaTela()
+{
+	var setaBaixo = $(".setaBaixo");
+	var contadorClick = 0;
+
+	setaBaixo.on('click', function()
+	{
+		var c = document.getElementById("texto").children;
+
+		$("#mensagemEnviada").css('color', '#17f588');
+		$("#mensagemEnviada").css('background', 'transparent');
+
+		$(".mensagemDoBeemo").css('color', '#17f588');
+		$(".mensagemDoBeemo").css('background', 'transparent');
+
+		c[contadorClick].style.color = "#1d3934";
+		c[contadorClick].style.backgroundColor = "#17f588";
+
+		contadorClick++;
+		console.log(contadorClick);
 	});
 }

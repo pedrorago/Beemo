@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>BEEMO</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
@@ -14,7 +15,9 @@
              
             <div class='BeemoFrente'>
                 <div class='BeemoFace'>
-                    <div class="texto"></div>
+                    <div class="texto" id='texto'>
+
+                    </div>
                     <span class='BeemoOlhos OlhoEsquerdo'></span>
                     <span class='BeemoOlhos OlhoDireito'></span>
 
@@ -56,15 +59,18 @@
             
         </div>
 
-        <form class='faleForm'>  
-            
-            <input type="text" name="chat">
-            <span>Ok</span>
+        <section class='buttonChat'>
+            <div class="buttonTexto">
+                <input type="text" name="" placeholder="Converse com o Beemo" class='InputTexto'>        
+            </div>
+            <div class="cover">
+                <div class="innie"><i class="material-icons enviaMensagemIcon">send</i></div>
+                <div class="spine"></div>
+                <div class="outie"><i class="material-icons">chat</i></div>
+            </div>
+            <div class="shadow enviaMensagem" onclick='enviaMensagem()'></div>
+        </section>
 
-        </form>
-
-
-        <a href="javascript:void(0)" class='botaoAbreForm'></a>
 
 
     </div>
@@ -72,6 +78,8 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/bancoBeemo.js"></script>
+    
 
 </body>
 </html>

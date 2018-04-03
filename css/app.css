@@ -10,7 +10,7 @@
 
 body
 {
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 button:focus
 {
@@ -22,18 +22,18 @@ button
 }
 .content
 {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #e6e6e6;
-	position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6e6e6;
+    position: fixed;
 }
 .BeemoBody
 {
-	width: 400px;
-	height: 650px;
+    width: 400px;
+    height: 650px;
 }
 .BeemoFrente
 {
@@ -58,6 +58,7 @@ button
     padding: 0em 5em;
     position: relative;
     transition: .3s ease-out;
+    overflow: hidden;
 }
 .BeemoFaceDigitando
 {
@@ -268,93 +269,217 @@ button
 }
 .texto
 {
-    font-family: 'Arcade';
-    color: #17f588;
     position: absolute;
     width: 86%;
-    height: 78%;
+    height: auto;
     display: flex;
     border-radius: 41px;
     left: 0%;
     padding: 1.5em;
     overflow-x: hidden;
     overflow-y: auto;
+    transition: 1s ease-out;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 2.3em;
 }
 .textoAlinhado
 {
-    align-items: center;
     justify-content: center;
 }
-.faleForm
+.texto p, .texto h1
 {
-    width: 21em;
-    height: 18em;
-    position: fixed;
-    right: 0%;
-    bottom: 0%;
-    display: none;
-    transition: 1s ease-out;
-}
-.botaoAbreForm
-{
-    background: #44c2df;
-    width: 3em;
-    height: 3em;
-    position: absolute;
-    bottom: 3.5%;
-    right: 2%;
-    border-radius: 3%;
-    border: 1px solid #000;
-    cursor: pointer;
-    transition: 1s ease-out;
-    display: none;
-}
-.faleForm input
-{
-    border-radius: 8px;
-    border: 1px solid;
-    height: 2em;
-    width: 13.8em;
-    padding-left: 1em;
-    margin-bottom: 2.3em;
-    bottom: 0%;
-    position: absolute;
-    padding-right: 3.2em;
-}
-.faleForm input:focus
-{
-    outline: none;
-}
-.faleForm span
-{
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: 2em;
-    height: 1.8em;
-    right: 29%;
-    background: none;
-    border: none;
-    cursor: pointer;
-    border-left: 1px solid;
+
+    font-family: 'Arcade';
+    color: #17f588;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0em .4em;
+    padding: .2em 0em;
+    width: 107.3%;
+    margin-left: -1.5em;
+    padding-left: 1.5em;
+    margin-bottom: .1em;
+    line-height: 1.3em;
 
 }
-
+.texto .mensagemEnviada
+{
+    color: #1d3934;
+    background-color: #17f588;
+}
 @keyframes quicaBotao
 {
     0%
     {
-        bottom: 3.5%;
+        bottom: 6.7%;
     }
     50%
     {
-        bottom:8.5%;
+        bottom:9.7%;
     }
     100%
     {
-        bottom:3.5%;
+        bottom:6.7%;
     }
+
+}
+
+.buttonChat, .buttonChat div {
+  /* See it in slo-mo, you can change this */
+  transition-duration: .6s;
+}
+
+.buttonChat, .button { transition-timing-function: ease; }
+
+.buttonChat {
+  display: inline-block;
+  height: 2.5rem;
+  background: #A9ADB6;
+  border-radius: .25rem;
+  perspective: 300;
+  box-shadow: 0 -1px 2px #fff, inset 0 1px 2px rgba(0,0,0,.2), inset 0 .25rem 1rem rgba(0,0,0,.1);
+  position: absolute;
+  right: 2%;
+  bottom: 6.7%;
+  display: none;
+}
+
+
+.button { opacity: 0; }
+
+.cover {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform-origin: center bottom;
+  transform-style: preserve-3d;
+  font: 1.25em/2 "icon";
+  color: white;
+  text-align: center;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.innie, .outie, .spine, .shadow { position: absolute; width: 100%; }
+
+.innie, .outie {
+  height: 100%;
+  background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.1) 100%);
+  border-radius: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innie {
+  background-color: #25ad9f;
+  text-shadow: 0 -2px 4px rgba(0,0,0,.2);
+}
+
+.spine {
+  top: .25rem;
+  background: #25ad9f;
+  height: .25rem;
+  transform: rotateX(90deg);
+  transform-origin: center top;
+}
+
+.shadow {
+  top: 100%;
+  left: 0;
+  height: 3.5rem;
+  transform-origin: center top;
+  transform: rotateX(90deg);
+  opacity: 0;
+  z-index: 0;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,.6) 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, transparent 100%);
+  border-radius: .4rem;
+  cursor: pointer;
+
+}
+
+.outie {
+  background-color: #25ad9f;
+  transform: translateZ(.25rem);
+  text-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.buttonChat:hover { background: #EBEFF2; }
+.buttonChat:hover .button { opacity: 1; }
+
+.buttonChat:hover .cover, .buttonChat:hover .innie, .buttonChat:hover .spine, .buttonChat:hover .outie, .buttonChat:hover .spine { transition-timing-function: cubic-bezier(.2,.7,.1,1.1); }
+
+.buttonChat:hover .cover { transform: rotateX(-145deg);  }
+
+.buttonChat:hover .innie { background-color: #25ad9f; }
+.buttonChat:hover .spine { background-color: #25ad9f; }
+.buttonChat:hover .outie { background-color: #25ad9f; color: rgba(255,255,255,0); }
+
+.buttonChat:hover .shadow { 
+  opacity: 1;
+  transform: rotateX(45deg) scale(.95);
+}
+
+
+small {
+  font: .8rem/1 sans-serif;
+  padding-top: 4rem;
+  color: #777;
+}
+small a { color: #222; text-decoration: none; border-bottom: thin solid #ccc; }
+small a:hover { border-bottom-color: #222; }
+
+
+.TextoButtonChat
+{
+    color: #44c2df;
+    text-decoration: none;
+}
+.InputTexto
+{
+    width: 88%;
+    height: 2.8em;
+    border: none;
+    background: transparent;
+    padding-left: 1.4em;
+}
+.InputTexto:focus
+{
+    outline: none;
+}
+.buttonTexto
+{
+    width: 100%;
+    height: 100%;
+}
+.enviaMensagemIcon
+{
+    transform: rotate(90deg);
+    width: 1.7em;
+    height: 7.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar 
+{
+  width: 8px;
+}
+
+::-webkit-scrollbar-track 
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+  height: 1em;
+}
+
+::-webkit-scrollbar-thumb 
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background: #6ebb64 ;
+
 }
