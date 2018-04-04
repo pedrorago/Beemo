@@ -1,10 +1,10 @@
 $(function(){
 
 	sorrisoBeemo();
-
 	setTimeout(saudacao, 2500);
-
 	paraBotao();
+
+
 
 });
 
@@ -30,7 +30,7 @@ function saudacao()
 
 	var textoSaudacao = 'Ola amiguinho!';
 
-	var h1 = $('<h1 class="mensagemDoBeemo">');
+	var h1 = $('<p class="mensagemDoBeemo">');
 
 	setTimeout(digitacao(textoSaudacao, h1), 3000);
 
@@ -57,7 +57,7 @@ function digitacao(mensagem, paragrafo)
 
 	function alerta() {
 		t+=texto.charAt(n);
-		if(n > texto.length) {
+		if (n > texto.length) {
 			return false;
 		}
 		setTimeout(function() {
@@ -86,7 +86,7 @@ function paraBotao()
 function enviaMensagem()
 {	
 	$(".texto").removeClass('textoAlinhado');
-	$(".texto").find('h1').css('padding-left', '1.5em');
+	$(".texto").find('.mensagemDoBeemo').css('padding-left', '1.5em');
 
 	var p = $("<p class='mensagemEnviada' id='mensagemEnviada'>");
 
@@ -105,31 +105,112 @@ function verificaTela()
 {
 	var quantidade = document.getElementById("texto").children.length;
 
-	if(quantidade > 1)
+	if (quantidade > 1)
 	{
-		abaixaTela()    
+		abaixaTela();
+		levantaTela();  
 	}
 
 }
 function abaixaTela()
 {
 	var setaBaixo = $(".setaBaixo");
+	var numeroMaximo = 7;
 	var contadorClick = 0;
+
 
 	setaBaixo.on('click', function()
 	{
-		var c = document.getElementById("texto").children;
+		var linhas = document.getElementById("texto").children;
+		var qtdLinhas = linhas.length;
+		var alturaString = $("#texto").css('top');
+		var alturaAtual = parseInt(alturaString);
+		var alturaString2 = '-32px';
+		var altura = parseInt(alturaString2);
+		var alturaResultado = alturaAtual + altura;
 
-		$("#mensagemEnviada").css('color', '#17f588');
-		$("#mensagemEnviada").css('background', 'transparent');
+		if (contadorClick < qtdLinhas)
+		{
 
-		$(".mensagemDoBeemo").css('color', '#17f588');
-		$(".mensagemDoBeemo").css('background', 'transparent');
+			$("#texto").find('p').css('color', '#17f588');
+			$("#texto").find('p').css('background', 'transparent');
 
-		c[contadorClick].style.color = "#1d3934";
-		c[contadorClick].style.backgroundColor = "#17f588";
+			linhas[contadorClick].style.color = "#1d3934";
+			linhas[contadorClick].style.backgroundColor = "#17f588";
 
-		contadorClick++;
-		console.log(contadorClick);
+			contadorClick++;
+
+			console.log('Clicks: '+contadorClick);
+			console.log('Linhas: '+qtdLinhas);
+
+		}
+		else
+		{
+			return;
+		}
+		if (contadorClick > numeroMaximo)
+		{			
+
+			$(".texto").css("top", alturaResultado);
+
+			numeroMaximo++;
+			
+		}		
+
 	});
+
+
+}
+function levantaTela()
+{
+	var setaCima = $(".setaCima");
+	var numeroMaximo = 7;
+
+
+
+	setaCima.on('click', function()
+	{
+		var linhas = document.getElementById("texto").children;
+		var qtdLinhas = linhas.length;
+		var contadorClick = qtdLinhas;
+
+		var alturaString = $("#texto").css('top');
+		var alturaAtual = parseInt(alturaString);
+		var alturaString2 = '32px';
+		var altura = parseInt(alturaString2);
+		var alturaResultado = alturaAtual + altura;
+
+		console.log(contadorClick);
+		console.log(qtdLinhas);
+		if (contadorClick <= qtdLinhas)
+		{
+
+			$("#texto").find('p').css('color', '#17f588');
+			$("#texto").find('p').css('background', 'transparent');
+
+			linhas[contadorClick].style.color = "#1d3934";
+			linhas[contadorClick].style.backgroundColor = "#17f588";
+
+			contadorClick--;
+
+			console.log('Clicks: '+contadorClick);
+			console.log('Linhas: '+qtdLinhas);
+
+		}
+		else
+		{
+			return;
+		}
+		// if (contadorClick < numeroMaximo)
+		// {			
+
+		// 	$(".texto").css("top", alturaResultado);
+
+		// 	numeroMaximo--;
+
+		// }		
+
+	});
+
+
 }

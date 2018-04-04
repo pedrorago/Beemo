@@ -54,13 +54,13 @@ function respondeSaudacao()
 {
 	setTimeout(function()
 	{
-		var h1 = $("<h1 class='mensagemDoBeemo'>");
+		var h1 = $("<p class='mensagemDoBeemo'>");
 
 		var mensagem = 'Como vai voce?';
 
 		digitacao(mensagem,h1);
 		verificaTela();
-	}, 2000);
+	}, 1000);
 
 
 }
