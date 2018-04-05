@@ -1,14 +1,14 @@
 $(function(){
 
+
 	sorrisoBeemo();
 	setTimeout(saudacao, 2500);
 	paraBotao();
 
-
-
+	
 });
 
-
+var contadorClick = 0;
 
 function sorrisoBeemo()
 {
@@ -101,23 +101,24 @@ function enviaMensagem()
 
 }
 
+
 function verificaTela()
 {
 	var quantidade = document.getElementById("texto").children.length;
 
+	
+
 	if (quantidade > 1)
 	{
 		abaixaTela();
-		levantaTela();  
 	}
 
 }
+
 function abaixaTela()
 {
 	var setaBaixo = $(".setaBaixo");
 	var numeroMaximo = 7;
-	var contadorClick = 0;
-
 
 	setaBaixo.on('click', function()
 	{
@@ -162,45 +163,44 @@ function abaixaTela()
 
 }
 function levantaTela()
-{
+{	
+	console.log(contadorClick);
+
 	var setaCima = $(".setaCima");
 	var numeroMaximo = 7;
 
+	var linhas = document.getElementById("texto").children;
+	var qtdLinhas = linhas.length;
+	//contadorClick = qtdLinhas;
 
+	// var alturaString = $("#texto").css('top');
+	// var alturaAtual = parseInt(alturaString);
+	// var alturaString2 = '32px';
+	// var altura = parseInt(alturaString2);
+	// var alturaResultado = alturaAtual + altura;
 
-	setaCima.on('click', function()
+	if (contadorClick <= qtdLinhas)
 	{
-		var linhas = document.getElementById("texto").children;
-		var qtdLinhas = linhas.length;
-		var contadorClick = qtdLinhas;
 
-		var alturaString = $("#texto").css('top');
-		var alturaAtual = parseInt(alturaString);
-		var alturaString2 = '32px';
-		var altura = parseInt(alturaString2);
-		var alturaResultado = alturaAtual + altura;
+		// $("#texto").find('p').css('color', '#17f588');
+		// $("#texto").find('p').css('background', 'transparent');
 
-		console.log(contadorClick);
-		console.log(qtdLinhas);
-		if (contadorClick <= qtdLinhas)
-		{
+		// linhas[contadorClick].style.color = "#1d3934";
+		// linhas[contadorClick].style.backgroundColor = "#17f588";
 
-			$("#texto").find('p').css('color', '#17f588');
-			$("#texto").find('p').css('background', 'transparent');
+		// contadorClick--;
 
-			linhas[contadorClick].style.color = "#1d3934";
-			linhas[contadorClick].style.backgroundColor = "#17f588";
+		// console.log('Clicks: '+contadorClick);
+		// console.log('Linhas: '+qtdLinhas);
 
-			contadorClick--;
-
-			console.log('Clicks: '+contadorClick);
-			console.log('Linhas: '+qtdLinhas);
-
-		}
-		else
-		{
-			return;
-		}
+		console.log('Levanta Clicks: '+contadorClick);
+		console.log('Levanta Linhas: '+qtdLinhas);
+		contadorClick = contadorClick - 1;
+	}
+	// else
+	// {
+	// 	return;
+	// }
 		// if (contadorClick < numeroMaximo)
 		// {			
 
@@ -210,7 +210,7 @@ function levantaTela()
 
 		// }		
 
-	});
 
 
-}
+
+	}
