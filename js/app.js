@@ -161,56 +161,56 @@ function abaixaTela()
 	});
 
 
-}
-function levantaTela()
-{	
-	console.log(contadorClick);
+ }
+// function levantaTela()
+// {	
+// 	console.log(contadorClick);
 
-	var setaCima = $(".setaCima");
-	var numeroMaximo = 7;
+// 	var setaCima = $(".setaCima");
+// 	var numeroMaximo = 7;
 
-	var linhas = document.getElementById("texto").children;
-	var qtdLinhas = linhas.length;
-	//contadorClick = qtdLinhas;
+// 	var linhas = document.getElementById("texto").children;
+// 	var qtdLinhas = linhas.length;
+// 	contadorClick = qtdLinhas;
 
-	// var alturaString = $("#texto").css('top');
-	// var alturaAtual = parseInt(alturaString);
-	// var alturaString2 = '32px';
-	// var altura = parseInt(alturaString2);
-	// var alturaResultado = alturaAtual + altura;
+// 	var alturaString = $("#texto").css('top');
+// 	var alturaAtual = parseInt(alturaString);
+// 	var alturaString2 = '32px';
+// 	var altura = parseInt(alturaString2);
+// 	var alturaResultado = alturaAtual + altura;
 
-	if (contadorClick <= qtdLinhas)
-	{
+// 	if (contadorClick <= qtdLinhas)
+// 	{
 
-		// $("#texto").find('p').css('color', '#17f588');
-		// $("#texto").find('p').css('background', 'transparent');
+// 		$("#texto").find('p').css('color', '#17f588');
+// 		$("#texto").find('p').css('background', 'transparent');
 
-		// linhas[contadorClick].style.color = "#1d3934";
-		// linhas[contadorClick].style.backgroundColor = "#17f588";
+// 		linhas[contadorClick].style.color = "#1d3934";
+// 		linhas[contadorClick].style.backgroundColor = "#17f588";
 
-		// contadorClick--;
+// 		contadorClick--;
 
-		// console.log('Clicks: '+contadorClick);
-		// console.log('Linhas: '+qtdLinhas);
+// 		console.log('Clicks: '+contadorClick);
+// 		console.log('Linhas: '+qtdLinhas);
 
-		console.log('Levanta Clicks: '+contadorClick);
-		console.log('Levanta Linhas: '+qtdLinhas);
-		contadorClick = contadorClick - 1;
-	}
-	// else
-	// {
-	// 	return;
-	// }
-		// if (contadorClick < numeroMaximo)
-		// {			
+// 		console.log('Levanta Clicks: '+contadorClick);
+// 		console.log('Levanta Linhas: '+qtdLinhas);
+// 		contadorClick = contadorClick - 1;
+// 	}
+// 	else
+// 	{
+// 		return;
+// 	}
+// 		if (contadorClick < numeroMaximo)
+// 		{			
 
-		// 	$(".texto").css("top", alturaResultado);
+// 			$(".texto").css("top", alturaResultado);
 
-		// 	numeroMaximo--;
+// 			numeroMaximo--;
 
-		// }		
-
-
+// 		}		
 
 
-	}
+
+
+// 	}
